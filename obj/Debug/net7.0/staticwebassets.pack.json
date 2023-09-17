@@ -1,0 +1,421 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/obj/Debug/net7.0/scopedcss/projectbundle/aspokedex.bundle.scp.css",
+      "PackagePath": "staticwebassets/aspokedex.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/.DS_Store",
+      "PackagePath": "staticwebassets/.DS_Store"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/.DS_Store",
+      "PackagePath": "staticwebassets/images/.DS_Store"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/blackpokedex.jpeg",
+      "PackagePath": "staticwebassets/images/blackpokedex.jpeg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/closePokeDex.png",
+      "PackagePath": "staticwebassets/images/closePokeDex.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/closepokedexbtn.png",
+      "PackagePath": "staticwebassets/images/closepokedexbtn.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/cookie.png",
+      "PackagePath": "staticwebassets/images/cookie.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/cookies.png",
+      "PackagePath": "staticwebassets/images/cookies.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/energy/energyElectric.jpeg",
+      "PackagePath": "staticwebassets/images/energy/energyElectric.jpeg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/energy/energyFighting.jpg",
+      "PackagePath": "staticwebassets/images/energy/energyFighting.jpg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/energy/energyFire.png",
+      "PackagePath": "staticwebassets/images/energy/energyFire.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/energy/energyLeaf.jpeg",
+      "PackagePath": "staticwebassets/images/energy/energyLeaf.jpeg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/energy/energyNormal.png",
+      "PackagePath": "staticwebassets/images/energy/energyNormal.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/energy/energyPsychic.jpg",
+      "PackagePath": "staticwebassets/images/energy/energyPsychic.jpg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/energy/energyWater.png",
+      "PackagePath": "staticwebassets/images/energy/energyWater.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/gear.png",
+      "PackagePath": "staticwebassets/images/gear.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/greatball.png",
+      "PackagePath": "staticwebassets/images/greatball.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/haunter.png",
+      "PackagePath": "staticwebassets/images/haunter.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/milk.png",
+      "PackagePath": "staticwebassets/images/milk.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/nicePokedex.png",
+      "PackagePath": "staticwebassets/images/nicePokedex.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/noScreenPokedex.jpeg",
+      "PackagePath": "staticwebassets/images/noScreenPokedex.jpeg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/openPokeBall.png",
+      "PackagePath": "staticwebassets/images/openPokeBall.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/openPokeDex.png",
+      "PackagePath": "staticwebassets/images/openPokeDex.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/pokeball.png",
+      "PackagePath": "staticwebassets/images/pokeball.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/pokedex.png",
+      "PackagePath": "staticwebassets/images/pokedex.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/pokedexScreen.png",
+      "PackagePath": "staticwebassets/images/pokedexScreen.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/pokemontemplate.png",
+      "PackagePath": "staticwebassets/images/pokemontemplate.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/rare_candy.png",
+      "PackagePath": "staticwebassets/images/rare_candy.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/showBackground.png",
+      "PackagePath": "staticwebassets/images/showBackground.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/showBackground2.png",
+      "PackagePath": "staticwebassets/images/showBackground2.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/text/electricText.png",
+      "PackagePath": "staticwebassets/images/text/electricText.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/text/fightingText.png",
+      "PackagePath": "staticwebassets/images/text/fightingText.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/text/fireText.png",
+      "PackagePath": "staticwebassets/images/text/fireText.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/text/leafText.png",
+      "PackagePath": "staticwebassets/images/text/leafText.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/text/normalText.png",
+      "PackagePath": "staticwebassets/images/text/normalText.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/text/psychicText.png",
+      "PackagePath": "staticwebassets/images/text/psychicText.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/text/waterText.png",
+      "PackagePath": "staticwebassets/images/text/waterText.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/typePage.jpeg",
+      "PackagePath": "staticwebassets/images/typePage.jpeg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/ultraball.png",
+      "PackagePath": "staticwebassets/images/ultraball.png"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/images/whiteCard.jpg",
+      "PackagePath": "staticwebassets/images/whiteCard.jpg"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/chasethrillz/Desktop/aspokedex/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.aspokedex.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.aspokedex.props",
+      "PackagePath": "build\\aspokedex.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.aspokedex.props",
+      "PackagePath": "buildMultiTargeting\\aspokedex.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.aspokedex.props",
+      "PackagePath": "buildTransitive\\aspokedex.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

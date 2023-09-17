@@ -1,0 +1,68 @@
+html {
+  font-size: 14px;
+}
+
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 50vh;
+  background-color: purple;
+} */
+
+.pb-3 {
+  /* border: 5px solid palevioletred; */
+  /* border: 5px solid lawngreen; */
+  min-height: 50vw;
+  /* height: 400px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('/images/noScreenPokedex.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#nav-ball {
+  height: 50px;
+  width: 50px;
+  margin: 0 0.5em;
+}
+#nav-ball:hover { cursor: pointer; }
+
+.footer-container {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  top: -1.25em;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.main-text-center {
+  /* border: 5px solid moccasin; */
+  height: 400px;
+  width: 400px;
+  background-image: url('/images/nicePokedex.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

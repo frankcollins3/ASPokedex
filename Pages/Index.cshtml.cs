@@ -22,7 +22,7 @@ public class IndexModel : PageModel
     try
     {
         var httpClient = _httpClientFactory.CreateClient();
-        var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon?limit=25"); // Limit to 10 Pokemon for example
+        var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon?limit=3"); // Limit to 10 Pokemon for example
 
         if (response.IsSuccessStatusCode)
         {
@@ -30,10 +30,26 @@ public class IndexModel : PageModel
             var data = JObject.Parse(content);
             var results = data["results"];
 
-            Console.WriteLine(results);
+            // Console.WriteLine(results);
 
             PokemonNames = results.Select(p => p["name"].ToString()).ToList();
             PokeURLs = results.Select(p => p["url"].ToString()).ToList();
+
+                foreach(string pokeName in PokemonNames)
+            {
+                Console.Write($"name: \t {pokeName} \n");
+
+                var singlePokeResponse = await httpClient.GetAsync($"https://pokeapi.co/api/v2/pokemon/{pokeName}");
+                    if (singlePokeResponse.IsSuccessStatusCode)
+                {
+                    var content2 = await singlePokeResponse.Content.ReadAsStringAsync();
+                    var data2 = JObject.Parse(content2);
+                    Console.WriteLine(data2);
+                    var results2 = data2["results"];
+                }
+            }
+
+
         }
         else
         {

@@ -1,19 +1,43 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace aspokedex.Pages;
+using Newtonsoft.Json.Linq;
 
 public class IndexModel : PageModel
 {
-    private readonly ILogger<IndexModel> _logger;
+    private readonly IHttpClientFactory _httpClientFactory;
 
-    public IndexModel(ILogger<IndexModel> logger)
+    public IndexModel(IHttpClientFactory httpClientFactory)
     {
-        _logger = logger;
+        _httpClientFactory = httpClientFactory;
     }
 
-    public void OnGet()
-    {
+    public string PokemonName { get; private set; } // Updated property name
 
+    public async Task<IActionResult> OnGetAsync()
+    {
+        try
+        {
+            var httpClient = _httpClientFactory.CreateClient();
+            var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon/108");
+
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var data = JObject.Parse(content);
+                PokemonName = data["name"].ToString(); // Update the property here
+
+                return Page(); // Return the Razor Page
+            }
+            else
+            {
+                return new JsonResult(new { name = "Not Found" });
+            }
+        }
+        catch (Exception ex)
+        {
+            return new JsonResult(new { name = "Error" });
+        }
     }
 }

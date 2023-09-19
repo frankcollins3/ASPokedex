@@ -22,50 +22,58 @@ public class IndexModel : PageModel
     try
     {
         var httpClient = _httpClientFactory.CreateClient();
-        var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon?limit=3"); // Limit to 10 Pokemon for example
-
+        var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon?limit=151"); // Limit to 10 Pokemon for example
+    
         if (response.IsSuccessStatusCode)
         {
             var content = await response.Content.ReadAsStringAsync();
             var data = JObject.Parse(content);
             var results = data["results"];
-
-            // Console.WriteLine(results);
-
+        
             PokemonNames = results.Select(p => p["name"].ToString()).ToList();
-            PokeURLs = results.Select(p => p["url"].ToString()).ToList();
-
+            
+            PokemonSrc = new List<string>();
+            PokemonSrcBack = new List<string>();
                 foreach(string pokeName in PokemonNames)
             {
                 Console.Write($"name: \t {pokeName} \n");
 
-                var singlePokeResponse = await httpClient.GetAsync($"https://pokeapi.co/api/v2/pokemon/{pokeName}");
-                    if (singlePokeResponse.IsSuccessStatusCode)
+                    var singlePokeResponse = await httpClient.GetAsync($"https://pokeapi.co/api/v2/pokemon/{pokeName}");
+                if (singlePokeResponse.IsSuccessStatusCode)
                 {
                     var content2 = await singlePokeResponse.Content.ReadAsStringAsync();
                     var data2 = JObject.Parse(content2);
-                    Console.WriteLine(data2);
-                    var results2 = data2["results"];
+                    var results2 = data["results"];
+                    // Access the properties of the single Pokemon from data2
+                    
+                    var name = data2["name"].ToString();
+                    var id = data2["id"].ToString();
+                    var frontDefault = data2["sprites"]["front_default"].ToString();
+                    string backDefault = data2["sprites"]["back_default"].ToString();
+                    Console.WriteLine($"frontDefault: \t {frontDefault}");
+                    Console.WriteLine($"Name: {name}, ID: {id}, Img: {frontDefault}");
+                    PokemonSrc.Add(frontDefault);
+                    PokemonSrcBack.Add(backDefault);
                 }
             }
-
 
         }
         else
         {
             PokemonNames = new List<string> { "Not Found" };
-            PokeURLs = new List<string> { "No URL" };
         }
     }
     catch (Exception ex)
     {
         PokemonNames = new List<string> { "Error" };
-        PokeURLs = new List<string> { "catch block for URL" };
     }
 }
 
 public List<string> PokemonNames { get; private set; }
-public List<string> PokeURLs { get; private set; }
+public List<string> PokeIDs { get; private set; }
+public List<string> PokemonSrc { get; private set; }
+public List<string> PokemonSrcBack { get; private set; }
+
 
 
 }

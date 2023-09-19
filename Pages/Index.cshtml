@@ -23,7 +23,7 @@
     <ul>
             @for (int i = 0; i < Model.PokemonNames.Count; i++) 
         {
-            <img onmouseenter={pokeMouseEnter(event)} onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrc[i]" alt="Pokemon Image" />
+            <img onmouseenter={pokeMouseEnter(event)} onmouseleave={pokeMouseLeave(event)} onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrc[i]" alt="Pokemon Image" />
             <li id="pokemon-text-container1"> @Model.PokemonNames[i] </li>            
             @* <img onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrcBack[i]" alt="Pokemon Image" /> *@
 
@@ -35,22 +35,36 @@
 var pokemonSrcBack = @Html.Raw(Json.Serialize(Model.PokemonSrcBack));
 var pokemonSrc = @Html.Raw(Json.Serialize(Model.PokemonSrc));
 
-
+const pokemonIdFromSrc = (src) => {
+        if (typeof src === "string") 
+    {
+        let srcId = src.replace(/\D+/g, '');
+        return srcId
+    } else
+    {
+        return;
+    }
+}
 
 
 const pokeMouseEnter = (event) => {
     console.log('event', event);
-    let src = event.target.src;
-    let srcId = src.replace(/\D+/g, '');
+    let src = event.target.src
+    let srcId = pokemonIdFromSrc(src)
     $(event.target).css('border', '5px dotted papayawhip');
-    console.log('srcId', srcId)
-    console.log('pokemonSrcBack', pokemonSrcBack)
-
     $(event.target).attr('src', pokemonSrcBack[srcId - 1]);
 }
 
 const pokeMouseLeave = (event) => {
-
+    let src = event.target.src;
+        if (typeof src === "string")
+    {
+        let srcId = pokemonIdFromSrc(src);
+        $(event.target).attr('src', pokemonSrc[srcId - 1]);
+    } else 
+    {
+        return;
+    }
 }
 
 const pokemonClick = (event) => {

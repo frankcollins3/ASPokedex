@@ -4,7 +4,45 @@
     ViewData["Title"] = "Home Page";
 }
 
+@functions {
+    string getName()
+    {
+        return "hey";
+    }
+}
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 <div class="main-text-center">
-    <h1>Pokemon Name</h1>
-    <p>@Model.PokemonName</p>
+            
+    <ul>
+            @for (int i = 0; i < Model.PokemonNames.Count; i++) 
+        {
+            <img onmouseenter={pokeMouseEnter(event)} onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrc[i]" alt="Pokemon Image" />
+            <li id="pokemon-text-container1"> @Model.PokemonNames[i] </li>            
+            @* <img onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrcBack[i]" alt="Pokemon Image" /> *@
+
+        }
+    </ul>
 </div>
+
+<script>
+const pokeMouseEnter = (event) => {
+    console.log('event', event);
+    $(event.target).css('border', '5px solid orange');
+}
+
+const pokemonClick = (event) => {
+    console.log('event', event)
+    let src = event.target.src
+    let srcId = src.replace(/\D+/g, '');
+    console.log(src);
+    console.log(srcId);
+}
+
+</script>

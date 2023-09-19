@@ -32,9 +32,25 @@
 </div>
 
 <script>
+var pokemonSrcBack = @Html.Raw(Json.Serialize(Model.PokemonSrcBack));
+var pokemonSrc = @Html.Raw(Json.Serialize(Model.PokemonSrc));
+
+
+
+
 const pokeMouseEnter = (event) => {
     console.log('event', event);
-    $(event.target).css('border', '5px solid orange');
+    let src = event.target.src;
+    let srcId = src.replace(/\D+/g, '');
+    $(event.target).css('border', '5px dotted papayawhip');
+    console.log('srcId', srcId)
+    console.log('pokemonSrcBack', pokemonSrcBack)
+
+    $(event.target).attr('src', pokemonSrcBack[srcId - 1]);
+}
+
+const pokeMouseLeave = (event) => {
+
 }
 
 const pokemonClick = (event) => {

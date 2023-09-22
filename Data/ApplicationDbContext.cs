@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Pokemon.Models;
+using aspokedex.PokemonModel; // Include the namespace where PokemonModel is defined
 
+namespace aspokedex.Data
+{
 
 public class ApplicationDbContext : DbContext
 {
@@ -8,5 +10,7 @@ public class ApplicationDbContext : DbContext
     {
     }
 
-    public DbSet<PokemonModel> Pokemon { get; set; }
+    public DbSet<Pokemon> Pokemons { get; set; } // Use the plural form "Pokemons" for DbSet
+}
+
 }

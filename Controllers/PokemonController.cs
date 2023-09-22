@@ -1,33 +1,66 @@
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Pokemon.Models;
+using Microsoft.Extensions.Logging; // Add this using directive for logging
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using aspokedex.PokemonModel;
+using aspokedex.Data;
 
-namespace Pokemon.Controllers
+[ApiController]
+[Route("/api/[controller]")]
+public class PokemonController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class PokemonController : ControllerBase
+    private readonly ApplicationDbContext _context;
+    private readonly ILogger<PokemonController> _logger; // Add a logger field
+
+    public PokemonController(ApplicationDbContext context, ILogger<PokemonController> logger) // Inject the logger
     {
-        private readonly ApplicationDbContext _dbContext;
+        _context = context;
+        _logger = logger; // Initialize the logger
+    }
 
-        public PokemonController(ApplicationDbContext dbContext)
+    // GET: api/pokemon
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<Pokemon>>> GetPokemons()
+    {
+        try
         {
-            _dbContext = dbContext;
+            return await _context.Pokemons.ToListAsync();
         }
-
-        // GET api/pokemon/1
-        [HttpGet("{id}", Name = "GetPokemon")]
-        public IActionResult GetPokemon(int id)
+        catch (Exception ex)
         {
-            var pokemon = _dbContext.Pokemon.FirstOrDefault();
+            _logger.LogError(ex, "An error occurred while fetching Pokemons.");
+            return StatusCode(500, "An error occurred while fetching Pokemons.");
+        }
+    }
+
+    // GET: api/pokemon/5
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Pokemon>> GetPokemon(int id)
+    {
+        try
+        {
+            var pokemon = await _context.Pokemons.FindAsync(id);
 
             if (pokemon == null)
             {
                 return NotFound();
             }
 
-            return Ok(pokemon);
+            return pokemon;
         }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while fetching Pokemon by ID.");
+            return StatusCode(500, "An error occurred while fetching Pokemon by ID.");
+        }
+    }
+
+    // GET: api/pokemon/test
+    [HttpGet("test")]
+    public IActionResult GetTest()
+    {
+        return Ok("test");
     }
 }

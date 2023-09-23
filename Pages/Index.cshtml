@@ -1,16 +1,9 @@
+
 @page
 @model IndexModel
 @{
     ViewData["Title"] = "Home Page";
 }
-
-@functions {
-    string getName()
-    {
-        return "hey";
-    }
-}
-
 
 <html>
 <head>
@@ -23,10 +16,10 @@
     <ul>
             @for (int i = 0; i < Model.PokemonNames.Count; i++) 
         {
+            <div class="pokemonCard">
             <img onmouseenter={pokeMouseEnter(event)} onmouseleave={pokeMouseLeave(event)} onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrc[i]" alt="Pokemon Image" />
-            <li id="pokemon-text-container1"> @Model.PokemonNames[i] </li>            
-            @* <img onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrcBack[i]" alt="Pokemon Image" /> *@
-
+            <li onclick={testclick(event)} id="pokemon-text-container-@i" class="pokemon-text-container1"> @Model.PokemonNames[i] </li>            
+            </div>        
         }
     </ul>
 </div>
@@ -34,6 +27,10 @@
 <script>
 var pokemonSrcBack = @Html.Raw(Json.Serialize(Model.PokemonSrcBack));
 var pokemonSrc = @Html.Raw(Json.Serialize(Model.PokemonSrc));
+
+const CSS = (elem, rule, property) => {
+    $(elem).css(rule, property);
+}
 
 const pokemonIdFromSrc = (src) => {
         if (typeof src === "string") 
@@ -46,13 +43,16 @@ const pokemonIdFromSrc = (src) => {
     }
 }
 
-
 const pokeMouseEnter = (event) => {
-    console.log('event', event);
-    let src = event.target.src
-    let srcId = pokemonIdFromSrc(src)
-    $(event.target).css('border', '5px dotted papayawhip');
-    $(event.target).attr('src', pokemonSrcBack[srcId - 1]);
+    let src = event.target.src;
+        if (typeof src === "string" && src.length > 1)
+    {
+    let srcId = pokemonIdFromSrc(src);
+    srcId--;
+    $(event.target).attr('src', pokemonSrcBack[srcId]);
+    $('#pokemon-text-container-' + srcId).css('opacity', '1.0');
+    } 
+    return;
 }
 
 const pokeMouseLeave = (event) => {
@@ -68,11 +68,40 @@ const pokeMouseLeave = (event) => {
 }
 
 const pokemonClick = (event) => {
-    console.log('event', event)
-    let src = event.target.src
-    let srcId = src.replace(/\D+/g, '');
-    console.log(src);
-    console.log(srcId);
+    let src = event.target.src;
+    let srcId = pokemonIdFromSrc(src);
+    console.log('pokemonClick', srcId);
+        $.ajax({
+        url: "http://localhost:5278/api/pokemon/" + srcId, // Replace with the correct API endpoint 
+        method: 'GET',
+        success: function (data) {
+            // Handle the API response data here
+            console.log('API response:', data);
+        },
+        error: function (error) {
+            // Handle errors here
+            console.log("big failure lets go!");
+            console.error('API error:', error);
+        }
+    });
+}
+
+const testclick = () => {
+
+    // Make a GET request to your API
+    $.ajax({
+        url: "http://localhost:5278/api/pokemon", // Replace with the correct API endpoint 
+        method: 'GET',
+        success: function (data) {
+            // Handle the API response data here
+            console.log('API response:', data);
+        },
+        error: function (error) {
+            // Handle errors here
+            console.log("big failure lets go!");
+            console.error('API error:', error);
+        }
+    });
 }
 
 </script>

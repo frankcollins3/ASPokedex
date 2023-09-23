@@ -57,6 +57,25 @@ public class PokemonController : ControllerBase
         }
     }
 
+        // POST: api/pokemon
+    [HttpPost]
+    public async Task<ActionResult<Pokemon>> AddPokemon([FromBody] Pokemon pokemon)
+    {
+        try
+        {
+            // Add the new Pokemon to the context
+            _context.Pokemons.Add(pokemon);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetPokemon), new { id = pokemon.Id }, pokemon);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "An error occurred while adding a Pokemon.");
+            return StatusCode(500, "A wild 500 error appears!");
+        }
+    }
+
     // GET: api/pokemon/test
     [HttpGet("test")]
     public IActionResult GetTest()

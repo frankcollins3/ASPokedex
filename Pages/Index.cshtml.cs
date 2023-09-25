@@ -22,7 +22,7 @@ public class IndexModel : PageModel
     try
     {
         var httpClient = _httpClientFactory.CreateClient();
-        var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon?limit=1"); // Limit to 10 Pokemon for example
+        var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon?limit=9"); // Limit to 10 Pokemon for example
     
         if (response.IsSuccessStatusCode)
         {            
@@ -34,6 +34,7 @@ public class IndexModel : PageModel
             
             PokemonSrc = new List<string>();
             PokemonSrcBack = new List<string>();
+            PokemonTypes = new List<string>();
                 foreach(string pokeName in PokemonNames)
             {
                 Console.Write($"name: \t {pokeName} \n");
@@ -43,22 +44,20 @@ public class IndexModel : PageModel
                 {
                     var content2 = await singlePokeResponse.Content.ReadAsStringAsync();
                     var data2 = JObject.Parse(content2);
-                    Console.WriteLine(data2);
+                    // Console.WriteLine(data2);
                     var results2 = data["types"];
                     // Access the properties of the single Pokemon from data2
                     
                     var name = data2["name"].ToString();
                     var id = data2["id"].ToString();
                     // data2.sprites.frontDefault
-                    var frontDefault = data2["sprites"]["front_default"].ToString();
-                    string backDefault = data2["sprites"]["back_default"].ToString();
 
-                    string pokemonType = data2["types"]?[0]?["type"]?["name"]?.ToString();
-                    Console.WriteLine("pokemonType: \t", pokemonType);     
-                    
+                    var frontDefault = data2["sprites"]["front_default"].ToString();
+                    string backDefault = data2["sprites"]["back_default"].ToString();                    
+                    string pokemonType = data2["types"]?[0]?["type"]?["name"]?.ToString();                    
                     PokemonSrc.Add(frontDefault);
                     PokemonSrcBack.Add(backDefault);
-                    PokemonTypes.Add(pokemonType);
+                    PokemonTypes.Add(pokemonType);                    
                 }
             }
 
@@ -81,6 +80,9 @@ public List<string> PokemonSrcBack { get; private set; }
 public List<string> PokemonTypes { get; private set; }
 
 }
+
+
+
 
     // public async Task<IActionResult> OnGetAsync()
     // {

@@ -70,9 +70,33 @@ const pokeMouseLeave = (event) => {
 const pokemonClick = (event) => {
     let src = event.target.src;
     let srcId = pokemonIdFromSrc(src);
-    console.log('pokemonClick', srcId);
+    console.log('pokemonClick ', srcId);
+    let elemSiblingsJQ = $(event.target).siblings();
+    console.log('elemSiblings:', elemSiblingsJQ)
+    let textSiblingName = elemSiblingsJQ[0].innerHTML.trim()
+    console.log('textSiblingName', textSiblingName)
+    
+    $.ajax({
+        url: "http://localhost:5278/api/pokemon",
+        method: "POST",
+        contentType: "application/json", 
+        data: JSON.stringify({ 
+            pokename: textSiblingName,
+            pokeid: srcId,
+            type: "water"
+        }),
+        success: function (data) {
+            console.log('data', data)
+        },
+        error: function (error) {
+            console.log('a wild error appears!', error)
+        }
+    });    
+
+
+    /* * * * THIS IS A GET ROUTE FOR A SINGLE POKEMON BY THEIR
         $.ajax({
-        url: "http://localhost:5278/api/pokemon/" + srcId, // Replace with the correct API endpoint 
+        url: "http://localhost:5278/api/pokemon/" + srcId,
         method: 'GET',
         success: function (data) {
             // Handle the API response data here
@@ -84,6 +108,7 @@ const pokemonClick = (event) => {
             console.error('API error:', error);
         }
     });
+    */
 }
 
 const testclick = () => {

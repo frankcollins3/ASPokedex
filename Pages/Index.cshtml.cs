@@ -1,105 +1,110 @@
-@page
-@model IndexModel
-@{
-    ViewData["Title"] = "Home Page";
-}
+using System.Net.Http;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json.Linq;
 
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>jQuery Example</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</head>
-<div class="main-text-center">
+public class IndexModel : PageModel
+{
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public IndexModel(IHttpClientFactory httpClientFactory)
+    {
+        _httpClientFactory = httpClientFactory;
+    }
+
+    public string PokemonName { get; private set; } // Updated property name
+    public string PokemonID { get; private set;}
+
+
+    public async Task OnGetAsync()
+{
+    try
+    {
+        var httpClient = _httpClientFactory.CreateClient();
+        var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon?limit=1"); // Limit to 10 Pokemon for example
+    
+        if (response.IsSuccessStatusCode)
+        {            
+            var content = await response.Content.ReadAsStringAsync();
+            var data = JObject.Parse(content);
+            var results = data["results"];
+        
+            PokemonNames = results.Select(p => p["name"].ToString()).ToList();
             
-    <ul>
-            @for (int i = 0; i < Model.PokemonNames.Count; i++) 
-        {
-            <div class="pokemonCard">
-            <img onmouseenter={pokeMouseEnter(event)} onmouseleave={pokeMouseLeave(event)} onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrc[i]" alt="Pokemon Image" />
-            <li onclick={testclick()} id="@pokemon-text[i]" class="pokemon-text-container1"> @Model.PokemonNames[i] </li>            
-            </div>
-            @* <img onclick={pokemonClick(event)} id="@i" src="@Model.PokemonSrcBack[i]" alt="Pokemon Image" /> *@
+            PokemonSrc = new List<string>();
+            PokemonSrcBack = new List<string>();
+                foreach(string pokeName in PokemonNames)
+            {
+                Console.Write($"name: \t {pokeName} \n");
 
-        }
-    </ul>
-</div>
+                    var singlePokeResponse = await httpClient.GetAsync($"https://pokeapi.co/api/v2/pokemon/{pokeName}");
+                if (singlePokeResponse.IsSuccessStatusCode)
+                {
+                    var content2 = await singlePokeResponse.Content.ReadAsStringAsync();
+                    var data2 = JObject.Parse(content2);
+                    Console.WriteLine(data2);
+                    var results2 = data["types"];
+                    // Access the properties of the single Pokemon from data2
+                    
+                    var name = data2["name"].ToString();
+                    var id = data2["id"].ToString();
+                    // data2.sprites.frontDefault
+                    var frontDefault = data2["sprites"]["front_default"].ToString();
+                    string backDefault = data2["sprites"]["back_default"].ToString();
 
-<script>
-var pokemonSrcBack = @Html.Raw(Json.Serialize(Model.PokemonSrcBack));
-var pokemonSrc = @Html.Raw(Json.Serialize(Model.PokemonSrc));
-
-const pokemonIdFromSrc = (src) => {
-        if (typeof src === "string") 
-    {
-        let srcId = src.replace(/\D+/g, '');
-        return srcId
-    } else
-    {
-        return;
-    }
-}
-
-const pokeMouseEnter = (event) => {
-    console.log('event', event);
-    let src = event.target.src;
-    let srcId = pokemonIdFromSrc(src);
-    $(event.target).attr('src', pokemonSrcBack[srcId - 1]);
-}
-
-const pokeMouseLeave = (event) => {
-    let src = event.target.src;
-        if (typeof src === "string")
-    {
-        let srcId = pokemonIdFromSrc(src);
-        $(event.target).attr('src', pokemonSrc[srcId - 1]);
-    } else 
-    {
-        return;
-    }
-}
-
-const pokemonClick = (event) => {
-    console.log('event', event)
-    let src = event.target.src
-    let srcId = src.replace(/\D+/g, '');
-    console.log(src);
-    console.log(srcId);
-    $('#pokemon-text[i]').textContent = "hey";
-}
-
-const testclick = () => {
-    // Make a GET request to your API
-    $.ajax({
-        url: 'http://localhost:5278/api/pokemon', // Replace with the correct API endpoint 
-        method: 'GET',
-        success: function (data) {
-            console.log("hey were in the successsss");
-            // Handle the API response data here
-            console.log('API response:', data);
-        },
-        error: function (error) {
-            // Handle errors here
-            console.log("big failure lets go!");
-            console.error('API error:', error);
-        }
-    });
-}
-
-    @* async function fetchData() {
-        try {
-            const response = await fetch('/api/pokemon/test'); // Replace with the correct API endpoint
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+                    string pokemonType = data2["types"]?[0]?["type"]?["name"]?.ToString();
+                    Console.WriteLine("pokemonType: \t", pokemonType);     
+                    
+                    PokemonSrc.Add(frontDefault);
+                    PokemonSrcBack.Add(backDefault);
+                    PokemonTypes.Add(pokemonType);
+                }
             }
-            const data = await response.json();
-            console.log(data); // Handle the API response data here
-        } catch (error) {
-            console.error('API error:', error);
+
+        }
+        else
+        {
+            PokemonNames = new List<string> { "Not Found" };
         }
     }
+    catch (Exception ex)
+    {
+        PokemonNames = new List<string> { "Error" };
+    }
+}
 
-    // Call the fetchData function when the page loads
-    window.addEventListener('load', fetchData); *@
+public List<string> PokemonNames { get; private set; }
+public List<string> PokeIDs { get; private set; }
+public List<string> PokemonSrc { get; private set; }
+public List<string> PokemonSrcBack { get; private set; }
+public List<string> PokemonTypes { get; private set; }
 
-</script>
+}
+
+    // public async Task<IActionResult> OnGetAsync()
+    // {
+    //     try
+    //     {
+    //         var httpClient = _httpClientFactory.CreateClient();
+    //         var response = await httpClient.GetAsync("https://pokeapi.co/api/v2/pokemon/108");
+
+    //         if (response.IsSuccessStatusCode)
+    //         {
+    //             var content = await response.Content.ReadAsStringAsync();
+    //             var data = JObject.Parse(content);
+    //             PokemonName = data["name"].ToString(); // Update the property here
+    //             PokemonID = data["id"].ToString();
+
+    //             return Page(); // Return the Razor Page
+    //         }
+    //         else
+    //         {
+    //             return new JsonResult(new { name = "Not Found" });
+    //         }
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         return new JsonResult(new { name = "Error" });
+    //     }
+    // }

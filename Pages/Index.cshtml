@@ -27,6 +27,7 @@
 <script>
 var pokemonSrcBack = @Html.Raw(Json.Serialize(Model.PokemonSrcBack));
 var pokemonSrc = @Html.Raw(Json.Serialize(Model.PokemonSrc));
+var pokemonTypes = @Html.Raw(Json.Serialize(Model.PokemonTypes));
 
 const CSS = (elem, rule, property) => {
     $(elem).css(rule, property);
@@ -72,10 +73,14 @@ const pokemonClick = (event) => {
     let srcId = pokemonIdFromSrc(src);
     console.log('pokemonClick ', srcId);
     let elemSiblingsJQ = $(event.target).siblings();
-    console.log('elemSiblings:', elemSiblingsJQ)
-    let textSiblingName = elemSiblingsJQ[0].innerHTML.trim()
-    console.log('textSiblingName', textSiblingName)
-    
+    console.log('elemSiblings:', elemSiblingsJQ);
+    let textSiblingName = elemSiblingsJQ[0].innerHTML.trim();
+    console.log('textSiblingName', textSiblingName);
+        
+    console.log(pokemonTypes);
+    let clickType = pokemonTypes[srcId-1];
+    console.log(clickType);
+
     $.ajax({
         url: "http://localhost:5278/api/pokemon",
         method: "POST",
@@ -83,7 +88,7 @@ const pokemonClick = (event) => {
         data: JSON.stringify({ 
             pokename: textSiblingName,
             pokeid: srcId,
-            type: "water"
+            type: clickType
         }),
         success: function (data) {
             console.log('data', data)
